@@ -1,0 +1,2 @@
+@extends('layouts.admin')
+@section('content')<form method="post" action="{{route('admin.events.store')}}">@csrf<input name="title" placeholder="Tên" class="border"><input name="slug" placeholder="slug" class="border"><input name="event_type" value="love" class="border"><input name="status" value="draft" class="border"><input name="main_title" class="border"><select name="template_id">@foreach($templates as $template)<option value="{{$template->id}}">{{$template->name}}</option>@endforeach</select><button>Lưu</button></form>@endsection
